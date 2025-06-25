@@ -304,12 +304,16 @@ export default function Calendar() {
                       className={`min-h-[100px] p-2 border-b border-r ${isCurrentMonth ? "bg-white" : "bg-gray-50"
                         } ${isToday ? "bg-blue-50" : ""}`}
                     >
-                      <div
-                        className={`text-sm font-medium mb-2 ${isCurrentMonth ? "text-gray-900" : "text-gray-400"
-                          } ${isToday ? "text-blue-600 font-bold" : ""}`}
-                      >
-                        {day.getDate()}
+                      <div className="mb-2">
+                        <span
+                          className={`inline-block w-6 h-6 text-sm font-medium text-center rounded-full ${
+                            isToday ? "bg-blue-600 text-white" : isCurrentMonth ? "text-gray-900" : "text-gray-400"
+                          }`}
+                        >
+                          {day.getDate()}
+                        </span>
                       </div>
+
 
                       <div className="space-y-1">
                         {dayEvents.slice(0, 2).map((event) => (
